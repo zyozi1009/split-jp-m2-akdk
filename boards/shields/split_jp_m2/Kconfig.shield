@@ -1,0 +1,4 @@
+config SHIELD_SPLIT_JP_M2_LEFT
+    def_bool $(shields_list_contains,split_jp_m2_left)
+config SHIELD_SPLIT_JP_M2_RIGHT
+    def_bool $(shields_list_contains,split_jp_m2_right)

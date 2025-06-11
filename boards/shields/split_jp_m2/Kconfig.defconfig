@@ -1,0 +1,14 @@
+
+if SHIELD_SPLIT_JP_M2_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "split_jp_m2"
+
+endif
+
+if SHIELD_SPLIT_JP_M2_LEFT || SHIELD_SPLIT_JP_M2_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif

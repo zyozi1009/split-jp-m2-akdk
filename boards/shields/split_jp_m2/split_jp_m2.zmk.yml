@@ -1,0 +1,14 @@
+
+file_format: "1"
+id: split_jp_m2
+name: split_jp_m2
+type: shield
+features:
+  - keys
+  - studio
+outputs:
+  - usb
+  - ble
+siblings:
+  - split_jp_m2_left
+  - split_jp_m2_right
