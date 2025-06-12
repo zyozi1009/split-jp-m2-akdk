@@ -2,6 +2,25 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        win_l: win_l_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "WIN+L";
+            bindings = <&kp LGUI &kp L>;
+        };
+        abelsoft2003: abelsoft2003_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <40>; 
+            tap-ms  = <40>;
+            bindings = <
+                &kp A &kp B &kp E &kp L &kp S &kp O &kp F &kp T 
+                &kp 2 &kp 0 &kp 0 &kp 3
+                &kp EXCLAMATION
+            >;
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
         layer_0 {
