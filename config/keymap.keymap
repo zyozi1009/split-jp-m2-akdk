@@ -1,28 +1,56 @@
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        win_l: win_l_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "WIN+L";
+            bindings = <&kp LGUI &kp L>;
+        };
+        abelsoft2003: abelsoft2003 {
+            compatible = "zmk,behavior-macro";  // マクロを定義する互換性プロパティ :contentReference[oaicite:0]{index=0}
+            #binding-cells = <0>;
+            wait-ms = <40>;  // キー送出間のウェイト（ms）
+            tap-ms  = <40>;  // 各キーのタップ時間（ms）
+            bindings = <
+                &kp A &kp B &kp E &kp L &kp S &kp O &kp F &kp T      // “Abelsoft” 部分
+                &kp 2 &kp 0 &kp 0 &kp 3                             // “2003” 部分
+                &kp EXCLAMATION                                    // “!” 部分
+            >;  // キーシーケンスの指定 :contentReference[oaicite:1]{index=1}
+        };
+    };
     keymap {
         compatible = "zmk,keymap";
-
         layer_0 {
-            bindings =<
-                &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+            bindings = <
+                /* Row 0 */
+                &kp ESC			&kp F1			&kp F2			&kp F3				&kp F4			&kp F5		&kp F6		&bt BT_SEL 0				&kp F7			&kp F8			&kp F9			&kp F10			&kp F11			&kp F12       &kp PRSC               &kp DEL       &kp VOLUME_UP    &msc SCRL_UP
+
+                /* Row 1 */
+                &mo 1			&kp 1			&kp 2			&kp 3				&kp 4			&kp 5		&kp 6		&bt BT_SEL 1				&kp 7			&kp 8			&kp 9			&kp 0			&kp MINUS		&kp EQUAL     &kp BACKSLASH          &kp BSPC      &kp VOLUME_DOWN  &msc SCRL_DOWN
+
+                /* Row 2 */
+                &kp TAB			&kp Q			&kp W			&kp E				&kp R			&kp T		&kp Y		&bt BT_SEL 2				&kp Y			&kp U			&kp I			&kp O			&kp P			&kp LBKT      &kp RBKT               &kp ENTER     &lt 1 HOME       &kp PGUP
+
+                /* Row 3 */
+                &kp LCTRL		&kp A			&kp S			&kp D				&kp F			&kp G		&kp H		&kp VOLUME_UP				&kp H			&kp J			&kp K			&kp L			&kp SCLN		&kp QUOT      &kp BSLASH                           &lt 1 END        &kp PGDN
+	
+                /* Row 4 */
+                &kp LSHIFT		&kp Z			&kp X			&kp C				&kp V			&kp B					&kp VOLUME_DOWN				&kp B			&kp N			kp M			&kp COMMA		&kp DOT			&kp SLASH     &kp NON_US_BACKSLASH   &kp RSHIFT    &kp UP
+
+                /* Row 5 */
+                &kp LCTRL		&kp LGUI		&kp LALT		&kp INT_MUHENKAN	&kp SPACE		&kp ENTER	&kp BSPC	&kp DEL						&kp ENTER		&kp SPACE		&kp INT_HENKAN	&kp MENU		&kp RALT		&kp RCTRL     &mo 1                  &kp LEFT      &kp DOWN         &kp RIGHT
             >;
         };
 
         layer_1 {
             bindings =<
-                &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
-				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+                &none 			&none 			&none 			&none 				&none 			&none 		&none 		&abelsoft2003 				&none 			&none 			&none 			&none			&none			&none &none &none &none &none
+				&kp LANG5 &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &win_l &none
+				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &win_l &none
 				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
 				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
             >;
