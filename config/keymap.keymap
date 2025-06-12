@@ -1,5 +1,7 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/keys.h>      // キーボード用コード
+#include <dt-bindings/zmk/bt.h>         // Bluetooth 用コード
+#include <dt-bindings/zmk/pointing.h>   // マウス/スクロール用コード
 
 / {
     macros {
@@ -25,8 +27,7 @@
         compatible = "zmk,keymap";
         layer_0 {
             bindings = <
-                /* Row 0 */
-                &kp ESC			&kp F1		&kp F2		&kp F3				&kp F4			&kp F5		&kp F6		&bt BT_SEL 0				&kp F7			&kp F8			&kp F9			&kp F10			&kp F11			&kp F12			&kp PRSC				&kp DEL	&kp VOLUME_UP		&msc SCRL_UP
+                &kp ESC			&kp F1		&kp F2		&kp F3				&kp F4			&kp F5		&kp F6		&bt BT_SEL 0				&kp F7			&kp F8			&kp F9			&kp F10			&kp F11			&kp F12			&kp PSCRN				&kp DEL	&kp C_VOL_UP		&msc SCRL_UP
 				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
 				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
 				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
