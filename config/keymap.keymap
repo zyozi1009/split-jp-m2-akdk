@@ -38,12 +38,12 @@
 
         layer_1 {
             bindings =<
-                &none 			&none 		&none 		&none 				&none 			&none 		&none 		&none		 				&none 			&none 			&none 			&none			&none			&none			&none					&none		&none			&none
-				&kp LANG5		&none		&none		&none				&none			&none		&none		&abelsoft2003				&none			&none			&none			&none			&none			&none			&none					&none		&none			&none
-				none			&none		&none		&none				&none			&none		&none		&none						&none			&none			&none			&none			&none			&none			&none					&none		&win_l			&none
-				none			&none		&none		&none				&none			&none		&none		&none						&none			&none			&none			&win_l			&none			&none			&none								&win_l			&none
-				none			&none		&none		&none				&none			&none					&none						&none			&none			&none			&none			&none			&none			&none					&none		&none
-				none			&none		&none		&none				&none			&none		&none		&none						&none			&none			&none			&none			&none			&none			&none					&none		&none			&none
+                &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
+				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
             >;
         };
 
