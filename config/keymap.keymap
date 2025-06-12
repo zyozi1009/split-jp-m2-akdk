@@ -9,16 +9,16 @@
             label = "WIN+L";
             bindings = <&kp LGUI &kp L>;
         };
-        abelsoft2003: abelsoft2003 {
-            compatible = "zmk,behavior-macro";  // マクロを定義する互換性プロパティ :contentReference[oaicite:0]{index=0}
+        abelsoft2003: abelsoft2003_macro {
+            compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>;  // キー送出間のウェイト（ms）
-            tap-ms  = <40>;  // 各キーのタップ時間（ms）
+            wait-ms = <40>; 
+            tap-ms  = <40>;
             bindings = <
-                &kp A &kp B &kp E &kp L &kp S &kp O &kp F &kp T      // “Abelsoft” 部分
-                &kp 2 &kp 0 &kp 0 &kp 3                             // “2003” 部分
-                &kp EXCLAMATION                                    // “!” 部分
-            >;  // キーシーケンスの指定 :contentReference[oaicite:1]{index=1}
+                &kp A &kp B &kp E &kp L &kp S &kp O &kp F &kp T 
+                &kp 2 &kp 0 &kp 0 &kp 3
+                &kp EXCLAMATION
+            >;
         };
     };
     keymap {
