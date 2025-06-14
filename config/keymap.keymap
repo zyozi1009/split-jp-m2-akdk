@@ -7,10 +7,16 @@
     macros {
         win_l: win_l {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             label = "WIN+L";
             bindings = <&kp LGUI &kp L>;
         };
+		alt_enter: alt_enter {
+		    compatible = "zmk,behavior-macro";
+		    #binding-cells = <0>;
+		    label = "ALT+ENTER";
+		    bindings = <&kp LALT &kp ENTER>;
+		};
         abelsoft2003: abelsoft2003 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -45,13 +51,6 @@
 		    bindings = <&kp BSPC>, <&kp DEL>;
 		    mods      = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL)>;
 		};
-		alt_enter: alt_enter {
-		    compatible = "zmk,behavior-macro";
-		    /* 押下／離上げで 2 つのキーを送るので 2 を指定 */
-		    #binding-cells = <2>;
-		    label = "ALT+ENTER";
-		    bindings = <&kp LALT &kp ENTER>;
-		};
     };
     keymap {
         compatible = "zmk,keymap";
@@ -69,7 +68,7 @@
         layer_1 {
             bindings =<
                 &none 			&none 		&none		&kp PSCRN 			&none 			&none 			&win_l 			&none		 				&none 			&none 			&none 			&none			&none			&none			&none					&none		&none			&none
-				&none		&none		&none		&none				&none			&none			&none			&abelsoft2003				&none			&none			&none			&none			&none			&none			&none					&none		&none			&none
+				&kp GRAVE		&none		&none		&none				&none			&none			&none			&abelsoft2003				&none			&none			&none			&none			&none			&none			&none					&none		&none			&none
 				&none			&none		&none		&kp UP				&none			&none			&none			&none						&none			&none			&kp UP			&none			&none			&none			&none					&alt_enter	&none			&none
 				&none			&none		&kp LEFT	&kp DOWN			&kp RIGHT		&none			&none			&none						&none			&kp LEFT		&kp DOWN		&kp RIGHT		&none			&none			&none								&none			&none
 				&none			&none		&none		&none				&none			&kp DEL							&none						&none			&none			&none			&none			&none			&none			&none					&none		&none
