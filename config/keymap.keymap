@@ -69,8 +69,8 @@
             bindings =<
                 &none 			&none 		&none		&kp PSCRN 			&none 			&none 			&win_l 			&none		 				&none 			&none 			&none 			&none			&none			&none			&none					&kp DEL		&none			&none
 				&kp GRAVE		&none		&none		&none				&none			&none			&none			&abelsoft2003				&none			&none			&none			&none			&none			&none			&none					&kp BSPC	&none			&none
-				&none			&none		&none		&kp UP				&none			&none			&none			&none						&none			&none			&kp UP			&none			&none			&none			&none					&alt_enter	&none			&none
-				&kp LCTRL		&none		&kp LEFT	&kp DOWN			&kp RIGHT		&none			&none			&none						&none			&kp LEFT		&kp DOWN		&kp RIGHT		&none			&none			&none								&none			&none
+				&none			&none		&none		&kp UP				&kp UP			&none			&none			&none						&none			&none			&kp UP			&kp UP			&none			&none			&none					&alt_enter	&none			&none
+				&kp LCTRL		&kp LEFT	&kp LEFT	&kp DOWN			&kp RIGHT		&kp RIGHT		&none			&none						&kp LEFT		&kp LEFT		&kp DOWN		&kp RIGHT		&kp RIGHT		&none			&none								&none			&none
 				&kp LSHIFT		&none		&none		&none				&none			&kp DEL							&none						&none			&none			&none			&none			&none			&none			&none					&kp RSHIFT	&kp UP
 				&kp LCTRL		&none		&kp LALT	&kp F10				&kp BSPC		&alt_enter		&kp DEL			&none						&alt_enter		&kp DEL			&kp F7			&kp F8			&none			&kp RALT		&kp RCTRL				&kp LEFT	&kp DOWN		&kp RIGHT
             >;
