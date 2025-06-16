@@ -56,7 +56,6 @@
 		    label = "custom_del";
 		    #binding-cells = <0>;
 		    bindings = <&kp DEL>;
-		    hold-trigger-key = <&none>; /* ホールドを避ける */
 		};
     };
     keymap {
