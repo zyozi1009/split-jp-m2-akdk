@@ -51,12 +51,12 @@
 		    bindings = <&kp BSPC>, <&custom_del>;
 		    mods      = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL)>;
 		};
-	custom_del: custom_del {
-	    compatible = "zmk,behavior-macro";
-	    label = "custom_del";
-	    #binding-cells = <0>;
-	    bindings = <&kp DEL>;
-	};
+		custom_del: custom_del {
+		    compatible = "zmk,behavior-macro";
+		    label = "custom_del";
+		    #binding-cells = <0>;
+		    bindings = <&kp DEL>;
+		};
     };
     keymap {
         compatible = "zmk,keymap";
