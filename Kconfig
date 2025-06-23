@@ -1,5 +1,0 @@
-# 1. ZMK本体の巨大な設定メニューをすべて読み込む
-source "Kconfig.zmk"
-
-# 2. 自分の子供である、split_jp_m2シールドの固有メニューを読み込む
-source "boards/shields/split_jp_m2/Kconfig.shield"
