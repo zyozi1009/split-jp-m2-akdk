@@ -1,3 +1,9 @@
+name: split_jp_m2_akdk
+
+zephyr:
+  sourcing:
+    - kconfig
+
 build:
   settings:
     board_root: .
