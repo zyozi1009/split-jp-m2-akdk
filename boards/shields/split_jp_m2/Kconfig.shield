@@ -1,3 +1,6 @@
+# ZMK本体が持つすべての設定メニューを読み込む
+source "Kconfig.zmk"
+
 config SHIELD_SPLIT_JP_M2_LEFT
     def_bool $(shields_list_contains,split_jp_m2_left)
 config SHIELD_SPLIT_JP_M2_RIGHT
