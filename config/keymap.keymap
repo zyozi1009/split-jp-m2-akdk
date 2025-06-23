@@ -110,18 +110,4 @@
             >;
         };
     };
-
-    key_overrides {
-        compatible = "zmk,key-overrides";
-
-        bspc_del_override: bspc_del_override {
-            if-binding = <&kp BSPC>;
-            
-            // トリガーとなるモディファイア
-            mods = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL)>;
-            
-            // 上書き後の動作（マクロ）
-            bindings = <&del_without_mods>;
-        };
-    };
 };
