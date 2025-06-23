@@ -45,12 +45,23 @@
 		    keep-mods = <(MOD_LSFT | MOD_RSFT)>;
 		};
         bspc_or_del: bspc_or_del {
-		    compatible = "zmk,behavior-mod-morph";
-		    label = "bspc_or_del";/*バックスペースとデリート*/
-		    #binding-cells = <0>;
-		    bindings = <&kp BSPC>, <&custom_del>;
-		    mods      = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL)>;
-		};
+            compatible = "zmk,behavior-macro";
+            label = "BSPC_OR_DEL";/*バックスペースとデリート※DELについては後述*/
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>;
+        };
+        // ModクリアしてDELを送信するマクロ
+        del_without_mods: del_without_mods {
+            compatible = "zmk,behavior-macro";
+            label = "DEL_WITHOUT_MODS";
+            #binding-cells = <0>;
+            bindings = <
+                &m_save_mods
+                &m_cl_mods
+                &kp DEL
+                &m_restore_mods
+            >;
+        };
 		custom_del: custom_del {
 		    compatible = "zmk,behavior-macro";
 		    label = "custom_del";
@@ -102,6 +113,21 @@
 				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
 				&none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none &none
             >;
+        };
+    };
+
+    key_overrides {
+        compatible = "zmk,key-overrides";
+
+        bspc_del_override: bspc_del_override {
+            // 上書きの対象を &bspc_or_del に設定
+            if-binding = <&bspc_or_del>;
+            
+            // トリガーとなるモディファイア
+            mods = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL)>;
+            
+            // 上書き後の動作（マクロ）
+            bindings = <&del_without_mods>;
         };
     };
 };
