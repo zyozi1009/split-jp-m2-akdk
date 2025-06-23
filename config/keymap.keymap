@@ -44,10 +44,9 @@
 		    mods      = <(MOD_LSFT | MOD_RSFT)>;
 		    keep-mods = <(MOD_LSFT | MOD_RSFT)>;
 		};
-		// 「通常のバックスペース」用のマクロ、本来のバックスペースはバックスペースorデリート化
-        normal_bspc: normal_bspc {
+        bspc_or_del: bspc_or_del {
             compatible = "zmk,behavior-macro";
-            label = "NORMAL_BSPC";
+            label = "BSPC_OR_DEL";/*バックスペースとデリート※DELについては後述*/
             #binding-cells = <0>;
             bindings = <&kp BSPC>;
         };
@@ -63,28 +62,34 @@
                 &m_restore_mods
             >;
         };
+		custom_del: custom_del {
+		    compatible = "zmk,behavior-macro";
+		    label = "custom_del";
+		    #binding-cells = <0>;
+		    bindings = <&kp DEL>;
+		};
     };
     keymap {
         compatible = "zmk,keymap";
         layer_0 {
             bindings = <
-                &kp ESC			&kp F1		&kp F2		&kp F3				&kp F4			&kp F5			&kp F6			&bt BT_SEL 0				&kp F7			&kp F8			&kp F9				&kp F10			&kp F11			&kp F12			&kp PSCRN				&kp DEL			&kp C_VOL_UP	&msc SCRL_UP
-                &mo 1			&kp N1		&kp N2		&kp N3				&kp N4			&kp N5			&kp N6			&bt BT_SEL 1				&kp N7			&kp N8			&kp N9				&kp N0			&kp MINUS/*-*/	&kp EQUAL/*^*/	&jis_en					&normal_bspc	&kp C_VOL_DN	&msc SCRL_DOWN
-                &kp TAB			&kp Q		&kp W		&kp E				&kp R			&kp T			&kp Y			&bt BT_SEL 2				&kp Y			&kp U			&kp I				&kp O			&kp P			&kp LBKT/*@*/	&kp RBKT/*[*/			&kp ENTER		&lt 1 HOME		&kp PG_UP
-                &kp LCTRL		&kp A		&kp S		&kp D				&kp F			&kp G			&kp H			&msc SCRL_UP				&kp H			&kp J			&kp K				&kp L			&kp SEMI/*;*/	&kp SQT/*:*/	&kp BACKSLASH/*]*/						&lt 1 END		&kp PG_DN
-                &kp LSHIFT		&kp Z		&kp X		&kp C				&kp V			&kp BSPC					&msc SCRL_DOWN				&kp B			&kp N			&kp M				&kp COMMA/*,*/	&kp DOT	/*.*/	&kp SLASH/* */	&jis_bslash				&kp RSHIFT		&kp UP
-                &kp LCTRL		&kp LGUI	&kp LALT	&lt 1 INT_MUHENKAN	&lt 1 SPACE		&lt 1 ENTER		&kp BSPC	&kp DEL						&lt 1 ENTER		&lt 1 SPACE		&lt 1 INT_HENKAN	&kp K_CMENU		&mo 1			&kp RALT		&kp RCTRL				&kp LEFT		&kp DOWN		&kp RIGHT
+                &kp ESC			&kp F1		&kp F2		&kp F3				&kp F4			&kp F5			&kp F6			&bt BT_SEL 0				&kp F7			&kp F8			&kp F9				&kp F10			&kp F11			&kp F12			&kp PSCRN				&kp DEL		&kp C_VOL_UP	&msc SCRL_UP
+                &mo 1			&kp N1		&kp N2		&kp N3				&kp N4			&kp N5			&kp N6			&bt BT_SEL 1				&kp N7			&kp N8			&kp N9				&kp N0			&kp MINUS/*-*/	&kp EQUAL/*^*/	&jis_en					&kp BSPC	&kp C_VOL_DN	&msc SCRL_DOWN
+                &kp TAB			&kp Q		&kp W		&kp E				&kp R			&kp T			&kp Y			&bt BT_SEL 2				&kp Y			&kp U			&kp I				&kp O			&kp P			&kp LBKT/*@*/	&kp RBKT/*[*/			&kp ENTER	&lt 1 HOME		&kp PG_UP
+                &kp LCTRL		&kp A		&kp S		&kp D				&kp F			&kp G			&kp H			&msc SCRL_UP				&kp H			&kp J			&kp K				&kp L			&kp SEMI/*;*/	&kp SQT/*:*/	&kp BACKSLASH/*]*/					&lt 1 END		&kp PG_DN
+                &kp LSHIFT		&kp Z		&kp X		&kp C				&kp V			&bspc_or_del					&msc SCRL_DOWN				&kp B			&kp N			&kp M				&kp COMMA/*,*/	&kp DOT	/*.*/	&kp SLASH/* */	&jis_bslash				&kp RSHIFT	&kp UP
+                &kp LCTRL		&kp LGUI	&kp LALT	&lt 1 INT_MUHENKAN	&lt 1 SPACE		&lt 1 ENTER		&bspc_or_del	&kp DEL						&lt 1 ENTER		&lt 1 SPACE		&lt 1 INT_HENKAN	&kp K_CMENU		&mo 1			&kp RALT		&kp RCTRL				&kp LEFT	&kp DOWN		&kp RIGHT
             >;
         };
 
         layer_1 {
             bindings =<
-                &none 			&none 		&none		&kp PSCRN 			&none 			&none 			&win_l 			&none		 				&none 			&none 			&none 				&none			&none			&none			&none					&kp DEL			&none			&none
-				&kp GRAVE		&none		&none		&none				&none			&none			&none			&abelsoft2003				&none			&none			&none				&none			&none			&none			&none					&normal_bspc	&none			&none
-				&none			&none		&none		&kp UP				&kp UP			&none			&none			&none						&none			&none			&kp UP				&kp UP			&none			&none			&none					&alt_enter		&none			&none
-				&kp LCTRL		&kp LEFT	&kp LEFT	&kp DOWN			&kp RIGHT		&kp RIGHT		&none			&kp C_VOL_UP				&kp LEFT		&kp LEFT		&kp DOWN			&kp RIGHT		&kp RIGHT		&none			&none									&win_l			&none
-				&kp LSHIFT		&none		&kp DOWN	&kp DOWN			&kp DOWN		&kp DEL							&kp C_VOL_DN				&none			&kp DOWN		&kp DOWN			&kp DOWN		&none			&none			&none					&kp RSHIFT		&kp UP
-				&kp LCTRL		&none		&kp LALT	&kp F10				&normal_bspc	&alt_enter		&kp DEL			&none						&alt_enter		&kp DEL			&kp F7				&kp F8			&none			&kp RALT		&kp RCTRL				&kp LEFT		&kp DOWN		&kp RIGHT
+                &none 			&none 		&none		&kp PSCRN 			&none 			&none 			&win_l 			&none		 				&none 			&none 			&none 				&none			&none			&none			&none					&kp DEL		&none			&none
+				&kp GRAVE		&none		&none		&none				&none			&none			&none			&abelsoft2003				&none			&none			&none				&none			&none			&none			&none					&kp BSPC	&none			&none
+				&none			&none		&none		&kp UP				&kp UP			&none			&none			&none						&none			&none			&kp UP				&kp UP			&none			&none			&none					&alt_enter	&none			&none
+				&kp LCTRL		&kp LEFT	&kp LEFT	&kp DOWN			&kp RIGHT		&kp RIGHT		&none			&kp C_VOL_UP				&kp LEFT		&kp LEFT		&kp DOWN			&kp RIGHT		&kp RIGHT		&none			&none								&win_l			&none
+				&kp LSHIFT		&none		&kp DOWN	&kp DOWN			&kp DOWN		&kp DEL							&kp C_VOL_DN				&none			&kp DOWN		&kp DOWN			&kp DOWN		&none			&none			&none					&kp RSHIFT	&kp UP
+				&kp LCTRL		&none		&kp LALT	&kp F10				&kp BSPC		&alt_enter		&kp DEL			&none						&alt_enter		&kp DEL			&kp F7				&kp F8			&none			&kp RALT		&kp RCTRL				&kp LEFT	&kp DOWN		&kp RIGHT
             >;
         };
 
@@ -115,7 +120,8 @@
         compatible = "zmk,key-overrides";
 
         bspc_del_override: bspc_del_override {
-            if-binding = <&kp BSPC>;
+            // 上書きの対象を &bspc_or_del に設定
+            if-binding = <&bspc_or_del>;
             
             // トリガーとなるモディファイア
             mods = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL)>;
