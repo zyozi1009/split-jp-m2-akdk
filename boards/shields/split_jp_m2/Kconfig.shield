@@ -1,4 +1,4 @@
-source "../zmk/Kconfig.zmk"
+source "$ZEPHYR_ZMK_MODULE_DIR/Kconfig.zmk"
 config SHIELD_SPLIT_JP_M2_LEFT
     def_bool $(shields_list_contains,split_jp_m2_left)
 config SHIELD_SPLIT_JP_M2_RIGHT
