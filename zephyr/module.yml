@@ -1,4 +1,4 @@
 build:
-  cmake: zephyr
+  cmake: ..
   settings:
     board_root: .
