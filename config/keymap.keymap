@@ -102,11 +102,8 @@
 
         bspc_del_override: bspc_del_override {
             if-binding = <&kp BSPC>;
-            
             mods = <(MOD_LSFT | MOD_RSFT | MOD_LCTL | MOD_RCTL)>;
             bindings = <&kp DEL>;
-            
-            swallow-mods = <true>;
         };
     };
 };
