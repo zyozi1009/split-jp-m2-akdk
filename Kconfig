@@ -1,2 +1,0 @@
-# ZMK本体が持つすべての設定メニューを読み込む
-source "Kconfig.zmk"
