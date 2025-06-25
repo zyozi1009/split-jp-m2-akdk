@@ -69,7 +69,7 @@
         ht_ctrl_or_td: ht_ctrl_or_td {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_CTRL_OR_TD";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
             tapping-term-ms = <200>; 
             bindings = <&kp LCTL>, <&td_none_or_combo>;
         };
