@@ -74,7 +74,7 @@
         ht_ctrl_or_td: ht_ctrl_or_td {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_CTRL_OR_TD";
-            #binding-cells = <2>;
+            #binding-cells = <0>;
 
             // ホールドと判定する時間 (ミリ秒)
             tapping-term-ms = <200>; 
