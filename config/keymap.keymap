@@ -71,7 +71,7 @@
             label = "HT_CTRL_OR_TD";
             #binding-cells = <0>;
             tapping-term-ms = <200>; 
-            bindings = <&kp LCTL>, <&td_none_or_combo>;
+            bindings = <&kp LCTL &td_none_or_combo>;
         };
     };
     keymap {
