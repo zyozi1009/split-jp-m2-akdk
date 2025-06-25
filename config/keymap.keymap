@@ -66,12 +66,18 @@
             tapping-term-ms = <250>; 
             bindings = <&none>, <&kp LC(LA(PAUSE_BREAK))>;
         };
+        ctrl_press: ctrl_press {
+            compatible = "zmk,behavior-key-press";
+            label = "CTRL_PRESS";
+            #binding-cells = <0>;
+            bindings = <&kp LCTRL>;
+        };
         ht_ctrl_or_td: ht_ctrl_or_td {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_CTRL_OR_TD";
             #binding-cells = <0>;
             tapping-term-ms = <200>; 
-            bindings = <&kp LCTL &td_none_or_combo>;
+            bindings = <&ctrl_press &td_none_or_combo>;
         };
     };
     keymap {
