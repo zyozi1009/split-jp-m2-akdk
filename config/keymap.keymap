@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/bt.h>         // Bluetooth 用コード
 #include <dt-bindings/zmk/pointing.h>   // マウス/スクロール用コード
 
-{
+/ {
     macros {
         win_l: win_l {
             compatible = "zmk,behavior-macro";
@@ -72,12 +72,12 @@
 
             // 1回タップ: &none (何もしない)
             // 2回タップ: &kp LC(LA(LS(C))) (Ctrl+Alt+Shift+C)
-            bindings = <&none>, <&kp LC(LA(LS(C)))>;
+            bindings = <&none>, <&kp LC(LA(PAUSE_BREAK))>;
         };
         ht_ctrl_or_td: ht_ctrl_or_td {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_CTRL_OR_TD";
-            #binding-cells = <0>;
+            #binding-cells = <2>;
 
             // ホールドと判定する時間 (ミリ秒)
             tapping-term-ms = <200>; 
