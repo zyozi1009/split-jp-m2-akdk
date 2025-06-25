@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/bt.h>         // Bluetooth 用コード
 #include <dt-bindings/zmk/pointing.h>   // マウス/スクロール用コード
 
-/ {
+{
     macros {
         win_l: win_l {
             compatible = "zmk,behavior-macro";
