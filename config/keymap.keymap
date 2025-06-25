@@ -28,6 +28,9 @@
                 &kp EXCLAMATION
             >;
         };
+    };
+
+    behaviors {
         jis_en: jis_en {
 		    compatible = "zmk,behavior-mod-morph";
 		    label = "jis_en";/*円マークとパイプ*/
