@@ -88,7 +88,7 @@
             label = "HT_CTRL_OR_TD";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            bindings = <ctrl_press &td_none_or_combo>;
+            bindings = <&ctrl_press &td_none_or_combo>;
         };
     };
     keymap {
