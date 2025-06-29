@@ -60,10 +60,11 @@
 		};
 */
         ctrl_press: ctrl_press {
-            compatible = "zmk,behavior-key-press";
-            label = "CTRL_PRESS";
-            #binding-cells = <1>;
-            param1 = <LCTRL>;  
+            compatible     = "zmk,behavior-macro";
+            #binding-cells = <0>;           /* マクロはセル不要 */
+            label          = "Ctrl";
+            /* ここで &kp LCTRL を使って「Ctrl キー」を送出 */
+            bindings       = <&kp LCTRL>;
         };
         ctrl_alt_pause: ctrl_alt_pause {
             compatible = "zmk,behavior-macro";
