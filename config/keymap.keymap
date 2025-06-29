@@ -59,25 +59,36 @@
 		    bindings = <&kp DEL>;
 		};
 */
-        td_none_or_combo: td_none_or_combo {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_NONE_OR_COMBO";
-            #binding-cells = <0>;
-            tapping-term-ms = <250>; 
-            bindings = <&none>, <&kp LC(LA(PAUSE_BREAK))>;
-        };
         ctrl_press: ctrl_press {
             compatible = "zmk,behavior-key-press";
             label = "CTRL_PRESS";
             #binding-cells = <0>;
             bindings = <&kp LCTRL>;
         };
+        ctrl_alt_pause: ctrl_alt_pause {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            label = "CTRL+ALT+PAUSE";
+            /* 左Ctrl, 左Alt, Pause/Break を順に押すマクロ */
+            bindings = <&kp LCTRL &kp LALT &kp PAUSE_BREAK>;
+        };
+    };
+
+    behaviors {
+        td_none_or_combo: td_none_or_combo {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_NONE_OR_COMBO";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            /* 1回タップ = none, 2回タップ = 先ほど定義した ctrl_alt_pause マクロ */
+            bindings = <&none>, <&ctrl_alt_pause>;
+        };
         ht_ctrl_or_td: ht_ctrl_or_td {
             compatible = "zmk,behavior-hold-tap";
             label = "HT_CTRL_OR_TD";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>; 
-            bindings = <&ctrl_press &td_none_or_combo>;
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            bindings = <&kp LCTL>, <&td_none_or_combo>;
         };
     };
     keymap {
