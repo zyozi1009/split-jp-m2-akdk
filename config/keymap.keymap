@@ -62,7 +62,7 @@
         ctrl_press: ctrl_press {
             compatible = "zmk,behavior-key-press";
             label = "CTRL_PRESS";
-            #binding-cells = <0>;
+            #binding-cells = <1>;
             bindings = <&kp LCTRL>;
         };
         ctrl_alt_pause: ctrl_alt_pause {
