@@ -63,7 +63,7 @@
             compatible = "zmk,behavior-key-press";
             label = "CTRL_PRESS";
             #binding-cells = <1>;
-            bindings = <&kp LCTRL>;
+            param1 = <LCTRL>;  
         };
         ctrl_alt_pause: ctrl_alt_pause {
             compatible = "zmk,behavior-macro";
@@ -88,7 +88,7 @@
             label = "HT_CTRL_OR_TD";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            bindings = <&kp LCTRL &td_none_or_combo>;
+            bindings = <&ctrl_press &td_none_or_combo>;
         };
     };
     keymap {
