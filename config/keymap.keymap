@@ -1,7 +1,8 @@
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>      // キーボード用コード
+#include <dt-bindings/zmk/keys.h>       // キーボード用コード
 #include <dt-bindings/zmk/bt.h>         // Bluetooth 用コード
 #include <dt-bindings/zmk/pointing.h>   // マウス/スクロール用コード
+#include <dt-bindings/zmk/hid.h>        // 特殊な機能キー
 
 / {
     macros {
@@ -75,7 +76,7 @@
 
         layer_1 {
             bindings =<
-                &none	&consumer_brightness_down	&consumer_brightness_up	&consumer_ac_search	 &consumer_launch_application_1	&none	&none 			&consumer_scan_prev	&consumer_play_pause	&consumer_scan_next	&consumer_volume_mute	&consumer_volume_down	&consumer_volume_up	&none	&win_l	&kp DEL	&none	&none
+                &none	&consumer_brightness_down	&consumer_brightness_up	&consumer_ac_search	 &consumer_launch_application_1	&none	&none	&none	&consumer_scan_prev	&consumer_play_pause	&consumer_scan_next	&consumer_volume_mute	&consumer_volume_down	&consumer_volume_up	&win_l	&kp DEL	&none	&none
 				&kp GRAVE		&none		&none		&none				&none			&none			&none			&abelsoft2003				&none			&none			&none				&none			&none			&none			&none					&kp BSPC	&none			&none
 				&none			&none		&none		&kp UP				&kp UP			&none			&none			&none						&none			&none			&kp UP				&kp UP			&none			&none			&none					&alt_enter	&none			&none
 				&kp LCTRL		&kp LEFT	&kp LEFT	&kp DOWN			&kp RIGHT		&kp RIGHT		&none			&none						&kp LEFT		&kp LEFT		&kp DOWN			&kp RIGHT		&kp RIGHT		&none			&none								&win_l			&none
