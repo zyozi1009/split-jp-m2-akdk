@@ -2,7 +2,6 @@
 #include <dt-bindings/zmk/keys.h>       // キーボード用コード
 #include <dt-bindings/zmk/bt.h>         // Bluetooth 用コード
 #include <dt-bindings/zmk/pointing.h>   // マウス/スクロール用コード
-#include <dt-bindings/zmk/hid.h>        // 特殊な機能キー
 
 / {
     macros {
@@ -65,18 +64,18 @@
         compatible = "zmk,keymap";
         layer_0 {
             bindings = <
-                &kp ESC			&kp F1		&kp F2		&kp F3				&kp F4			&kp F5			&kp F6			&bt BT_SEL 0				&kp F7			&kp F8			&kp F9				&kp F10			&kp F11			&kp F12			&kp PSCRN				&kp DEL		&kp C_VOL_UP	&msc SCRL_UP
-                &mo 1			&kp N1		&kp N2		&kp N3				&kp N4			&kp N5			&kp N6			&bt BT_SEL 1				&kp N7			&kp N8			&kp N9				&kp N0			&kp MINUS/*-*/	&kp EQUAL/*^*/	&jis_en					&kp BSPC	&kp C_VOL_DN	&msc SCRL_DOWN
-                &kp TAB			&kp Q		&kp W		&kp E				&kp R			&kp T			&kp Y			&bt BT_SEL 2				&kp Y			&kp U			&kp I				&kp O			&kp P			&kp LBKT/*@*/	&kp RBKT/*[*/			&kp ENTER	&lt 1 HOME		&kp PG_UP
-                &kp LCTRL		&kp A		&kp S		&kp D				&kp F			&kp G			&kp H			&kp F20						&kp H			&kp J			&kp K				&kp L			&kp SEMI/*;*/	&kp SQT/*:*/	&kp BACKSLASH/*]*/					&lt 1 END		&kp PG_DN
-                &kp LSHIFT		&kp Z		&kp X		&kp C				&kp V			&bspc_or_del					&kp PSCRN					&kp B			&kp N			&kp M				&kp COMMA/*,*/	&kp DOT	/*.*/	&kp SLASH/* */	&jis_bslash				&kp RSHIFT	&kp UP
-                &kp LCTRL		&kp LGUI	&kp LALT	&lt 1 INT_MUHENKAN	&lt 1 SPACE		&lt 1 ENTER		&bspc_or_del	&kp DEL						&lt 1 ENTER		&lt 1 SPACE		&lt 1 INT_HENKAN	&kp K_CMENU		&mo 1			&kp RALT		&kp RCTRL				&kp LEFT	&kp DOWN		&kp RIGHT
+				&kp ESC			&kp F1		&kp F2		&kp F3				&kp F4			&kp F5			&kp F6			&bt BT_SEL 0				&kp F7			&kp F8			&kp F9				&kp F10			&kp F11			&kp F12			&kp PSCRN				&kp DEL		&kp C_VOL_UP	&msc SCRL_UP
+				&mo 1			&kp N1		&kp N2		&kp N3				&kp N4			&kp N5			&kp N6			&bt BT_SEL 1				&kp N7			&kp N8			&kp N9				&kp N0			&kp MINUS/*-*/	&kp EQUAL/*^*/	&jis_en					&kp BSPC	&kp C_VOL_DN	&msc SCRL_DOWN
+				&kp TAB			&kp Q		&kp W		&kp E				&kp R			&kp T			&kp Y			&bt BT_SEL 2				&kp Y			&kp U			&kp I				&kp O			&kp P			&kp LBKT/*@*/	&kp RBKT/*[*/			&kp ENTER	&lt 1 HOME		&kp PG_UP
+				&kp LCTRL		&kp A		&kp S		&kp D				&kp F			&kp G			&kp H			&kp F20						&kp H			&kp J			&kp K				&kp L			&kp SEMI/*;*/	&kp SQT/*:*/	&kp BACKSLASH/*]*/					&lt 1 END		&kp PG_DN
+				&kp LSHIFT		&kp Z		&kp X		&kp C				&kp V			&bspc_or_del					&kp PSCRN					&kp B			&kp N			&kp M				&kp COMMA/*,*/	&kp DOT	/*.*/	&kp SLASH/* */	&jis_bslash				&kp RSHIFT	&kp UP
+				&kp LCTRL		&kp LGUI	&kp LALT	&lt 1 INT_MUHENKAN	&lt 1 SPACE		&lt 1 ENTER		&bspc_or_del	&kp DEL						&lt 1 ENTER		&lt 1 SPACE		&lt 1 INT_HENKAN	&kp K_CMENU		&mo 1			&kp RALT		&kp RCTRL				&kp LEFT	&kp DOWN		&kp RIGHT
             >;
         };
 
         layer_1 {
             bindings =<
-                &none	&consumer_brightness_down	&consumer_brightness_up	&consumer_ac_search	 &consumer_launch_application_1	&none	&none	&none	&consumer_scan_prev	&consumer_play_pause	&consumer_scan_next	&consumer_volume_mute	&consumer_volume_down	&consumer_volume_up	&win_l	&kp DEL	&none	&none
+				&none	&kp C_BRI_DN	&kp C_BRI_UP	&kp C_SEARCH	&kp C_LAUNCH_APP1	&none			&none			&none						&kp C_PREV		&kp C_PP		&kp C_NEXT			&kp C_MUTE		&kp C_VOL_DN	&kp C_VOL_UP	&win_l					&kp DEL		&none			&none
 				&kp GRAVE		&none		&none		&none				&none			&none			&none			&abelsoft2003				&none			&none			&none				&none			&none			&none			&none					&kp BSPC	&none			&none
 				&none			&none		&none		&kp UP				&kp UP			&none			&none			&none						&none			&none			&kp UP				&kp UP			&none			&none			&none					&alt_enter	&none			&none
 				&kp LCTRL		&kp LEFT	&kp LEFT	&kp DOWN			&kp RIGHT		&kp RIGHT		&none			&none						&kp LEFT		&kp LEFT		&kp DOWN			&kp RIGHT		&kp RIGHT		&none			&none								&win_l			&none
