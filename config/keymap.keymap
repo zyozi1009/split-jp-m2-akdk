@@ -75,7 +75,7 @@
 
         layer_1 {
             bindings =<
-				&none	&kp C_BRI_DN	&kp C_BRI_UP	&kp C_SEARCH	&kp C_LAUNCH_APP1	&none			&none			&none						&kp C_PREV		&kp C_PP		&kp C_NEXT			&kp C_MUTE		&kp C_VOL_DN	&kp C_VOL_UP	&win_l					&kp DEL		&none			&none
+				&none	&kp C_BRIGHTNESS_DEC	&kp C_BRIGHTNESS_INC	&kp C_SEARCH	&kp C_LAUNCH_APP1	&none			&none			&none						&kp C_PREV		&kp C_PP		&kp C_NEXT			&kp C_MUTE		&kp C_VOL_DN	&kp C_VOL_UP	&win_l					&kp DEL		&none			&none
 				&kp GRAVE		&none		&none		&none				&none			&none			&none			&abelsoft2003				&none			&none			&none				&none			&none			&none			&none					&kp BSPC	&none			&none
 				&none			&none		&none		&kp UP				&kp UP			&none			&none			&none						&none			&none			&kp UP				&kp UP			&none			&none			&none					&alt_enter	&none			&none
 				&kp LCTRL		&kp LEFT	&kp LEFT	&kp DOWN			&kp RIGHT		&kp RIGHT		&none			&none						&kp LEFT		&kp LEFT		&kp DOWN			&kp RIGHT		&kp RIGHT		&none			&none								&win_l			&none
