@@ -1,8 +1,3 @@
-
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-
-#include <dt-bindings/zmk/hid_usage.h>        /* HID Usage 定義 */
-#include <dt-bindings/zmk/hid_usage_pages.h>  /* HID Usage Page 定義 */
-
 #include "../../../config/keymap.keymap"
